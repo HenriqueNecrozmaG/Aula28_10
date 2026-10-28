@@ -80,7 +80,13 @@ PrefabInstance:
       addedObject: {fileID: 8039777248812123942}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 50f8de053a0ae0b4a8595b9750183193, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6052328494175068083}
+      addedObject: {fileID: -6174243546884447782}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 50f8de053a0ae0b4a8595b9750183193, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3014061293392762877}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 50f8de053a0ae0b4a8595b9750183193, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -2114102102453764348}
   m_SourcePrefab: {fileID: 100100000, guid: 50f8de053a0ae0b4a8595b9750183193, type: 3}
 --- !u!137 &4616291520736685828 stripped
 SkinnedMeshRenderer:
@@ -139,7 +145,7 @@ CharacterController:
   m_SkinWidth: 0.0001
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.85, z: 0}
---- !u!114 &6052328494175068083
+--- !u!114 &-6174243546884447782
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,14 +154,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 6383283379567362087}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea03b6be06c3bc44aac5ebd6288f3b16, type: 3}
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerTeste
+  m_EditorClassIdentifier: Fusion.Runtime.dll::Fusion.NetworkObject
+  SortKey: 3766871312
+  SendPriority: 1
+  EnableInterpolation: 1
+  Flags: 262402
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 3014061293392762877}
+  - {fileID: -2114102102453764348}
+  ForceRemoteRenderTimeframe: 0
+--- !u!114 &3014061293392762877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6383283379567362087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fusion.Runtime.dll::Fusion.NetworkTransform
+  _stateAuthorityChangeErrorCorrectionDelta: 0
+  SyncScale: 0
+  SyncParent: 0
+  _autoAOIOverride: 1
+  ConfigFlags: 0
+  PhysicsSettings:
+    ForecastEnabled: 1
+    DebugPhysics: 0
+    GravityForecast: 2
+    MaxExtrapolationTime: 0.15
+    MinLinearDetectedError: 0.02
+    MinAngularDetectedError: 3
+    DeadzoneVelocityMode: 0
+    MaxLinearError: 0
+    MaxAngularError: 0
+    LowCorrectionProgressThreshold: 0.015
+    HighErrorSimilarityThreshold: 1
+    MaxErrorTotalTime: 0.5
+    MaxRemoteSleepIgnoreTime: 0.5
+    ErrorCorrectionType: 0
+    LinearVelCorrectionMul: 1
+    AngularVelCorrectionMul: 1
+    PositionCorrectionLerp: 0.15
+    RotationCorrectionLerp: 0.15
+    Spring: 75
+    Damper: 2
+    MinImpactfulCollisionAlignment: 0.3
+    ImpactStartCorrectionTime: 0.1
+    ImpactCorrectionTimeComplete: 0.3
+--- !u!114 &-2114102102453764348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6383283379567362087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbff58bd44db19e43b2d46e885805cd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonPlayer
   moveSpeed: 6
   gravity: -20
   jumpHeight: 5
+  controller: {fileID: 8039777248812123942}
   moveAction: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   jumpAction: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   meshRenderer: {fileID: 4616291520736685828}
   blinkTime: 0.2
-  blinkNumber: 5
