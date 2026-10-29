@@ -37,11 +37,9 @@ public class DungeonHud : MonoBehaviour
             return;
         }
 
-        if (match.IsOver && !hasMatchEnded)
+        if (match.IsOver)
         {
             ShowResults(match);
-            endTime = time;
-            hasMatchEnded = true;
         }
         else
         {
@@ -53,6 +51,12 @@ public class DungeonHud : MonoBehaviour
         {
             StartCoroutine(Time());
             hasMatchBegun = true;
+        }
+
+        if (match.IsOver && !hasMatchEnded)
+        {
+            endTime = time;
+            hasMatchEnded = true;
         }
     }
 
@@ -68,7 +72,7 @@ public class DungeonHud : MonoBehaviour
 
         string message = localPlayerLost ? "Você perdeu" : "Você venceu";
 
-        resultsText.text = message + "\n Vencedor: Jogador " + winnerName + "\n Tempo: " + time;
+        resultsText.text = message + "\n Vencedor: Jogador " + winnerName + "\n Tempo: " + endTime;
     }
 
     IEnumerator Time()
