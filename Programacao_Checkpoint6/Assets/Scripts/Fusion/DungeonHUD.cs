@@ -15,8 +15,8 @@ public class DungeonHud : MonoBehaviour
     [SerializeField] private GameObject resultsPanel;
     [SerializeField] private TMP_Text resultsText;
 
-    private int time;
-    private bool hasMatchBegun;
+    private int time, endTime;
+    private bool hasMatchBegun, hasMatchEnded;
 
     void Start()
     {
@@ -37,9 +37,11 @@ public class DungeonHud : MonoBehaviour
             return;
         }
 
-        if (match.IsOver)
+        if (match.IsOver && !hasMatchEnded)
         {
             ShowResults(match);
+            endTime = time;
+            hasMatchEnded = true;
         }
         else
         {

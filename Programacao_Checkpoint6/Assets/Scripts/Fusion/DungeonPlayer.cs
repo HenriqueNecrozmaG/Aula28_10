@@ -29,6 +29,7 @@ public class DungeonPlayer : NetworkBehaviour
     private Vector3 moveInput;
     private Vector3 velocity;
     private bool isGrounded, jumpQueued, canMove;
+    private float xPosition;
 
     public override void Spawned()
     {
@@ -39,6 +40,7 @@ public class DungeonPlayer : NetworkBehaviour
         }
 
         ApplyColor();
+        xPosition = Runner.IsSharedModeMasterClient ? -27 : -29;
     }
 
     void ApplyColor()
@@ -145,7 +147,7 @@ public class DungeonPlayer : NetworkBehaviour
     {
         if (hit.collider.tag == "Void" || hit.collider.tag == "Obstacle")
         {
-            transform.position = new Vector3(-27f, 10f, 0f);
+            transform.position = new Vector3(xPosition, 12f, 0f);
             StartCoroutine(Blink());
         }
 
